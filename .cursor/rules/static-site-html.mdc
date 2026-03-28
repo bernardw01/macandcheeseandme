@@ -1,0 +1,20 @@
+---
+description: HTML conventions for the Mac and Cheese static site
+globs: site/**/*.html
+alwaysApply: false
+---
+
+# Static HTML
+
+- Use `<!DOCTYPE html>`, `<html lang="en">`, and `<meta charset="utf-8">` plus `<meta name="viewport" content="width=device-width, initial-scale=1">` on every page.
+- Include a unique `<title>` and a useful `<meta name="description">`.
+- One `<h1>` per page. Use `<header>`, `<main>`, `<footer>`, and `<section>` with stable `id` attributes for in-page anchors (`#meet-mac`, `#gallery`, etc.).
+- Link CSS with `<link rel="stylesheet" href="css/...">` and JS with `<script src="js/..." defer></script>` relative to the HTML file.
+- Provide a **skip link** to `#main` for keyboard users. All non-decorative images need meaningful `alt`; decorative images use `alt=""`.
+- Avoid inline `style` except rare one-off cases; prefer `site/css/main.css` and variables.
+
+```html
+<!-- Good: relative assets from site/index.html -->
+<link rel="stylesheet" href="css/main.css" />
+<script src="js/main.js" defer></script>
+```

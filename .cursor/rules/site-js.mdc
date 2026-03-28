@@ -1,0 +1,15 @@
+---
+description: JavaScript conventions for the Mac and Cheese static site
+globs: site/**/*.js
+alwaysApply: false
+---
+
+# JavaScript
+
+- Use **vanilla** ES5/ES2015+ as appropriate; no React/Vue/etc. unless `docs/PRD.md` is updated to allow a framework and a build step.
+- **Progressive enhancement:** core content must work with JS disabled; use `defer` on scripts.
+- Prefer small IIFEs or plain functions; avoid polluting `window` unless necessary.
+- Honor **`prefers-reduced-motion`** for scroll behavior and animations.
+- Do not load remote scripts for tracking or fonts without explicit product approval in the PRD.
+
+If adding modules (`type="module"`), keep entry points under `site/js/` and document any new files in publishing checks.

@@ -1,0 +1,15 @@
+---
+description: CSS conventions for the Mac and Cheese static site
+globs: site/**/*.css
+alwaysApply: false
+---
+
+# CSS
+
+- Define **design tokens** on `:root` (colors, spacing, radii, fonts) and reuse them; align changes with `docs/PRD.md` look and feel.
+- **Mobile-first:** base styles for small screens, then `@media (min-width: …)` for larger breakpoints.
+- Prefer **class-based** styling; keep specificity low. No `!important` unless overriding a third-party constraint (rare here).
+- Respect **`prefers-reduced-motion`**: disable or simplify animations/transitions when it matches.
+- Avoid inline styles in HTML; keep presentation in CSS files under `site/css/`.
+
+When adding new sections, extend existing patterns (`.section`, `.section--soft`, typography scale) before inventing new systems.

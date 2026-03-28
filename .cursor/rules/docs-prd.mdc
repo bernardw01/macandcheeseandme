@@ -1,0 +1,11 @@
+---
+description: Keep docs aligned when product or theme changes
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+# Documentation
+
+- **`docs/PRD.md`** is the source of truth for sections, tone, look and feel, and technical constraints. When you change the site’s structure, visual theme, or goals in a material way, update the PRD in the same effort (or immediately after).
+- **`docs/PUBLISH.md`** describes tiiny.host zipping and upload; update it if the deploy artifact name, folder layout, or hosting steps change.
+- Do not move deployable files into `docs/` or vice versa.
