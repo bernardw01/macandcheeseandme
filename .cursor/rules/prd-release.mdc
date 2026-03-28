@@ -1,0 +1,29 @@
+---
+description: After project updates, bump PRD version, log changelog, give git commit/push commands
+alwaysApply: true
+---
+
+# PRD version and release workflow
+
+Whenever you complete **substantive updates** to this repo (e.g. `dist/`, `docs/`, `.cursor/rules/`, or anything that changes shipped behavior or documentation):
+
+1. **Increment** the **Version** in [`docs/PRD.md`](docs/PRD.md) (top of file). Use [semantic versioning](https://semver.org/) in spirit:
+   - **Patch** (x.y.**Z**): typos, copy tweaks, small CSS fixes, no scope change.
+   - **Minor** (x.**Y**.0): new sections, notable UX/visual changes, new dependencies or tooling.
+   - **Major** (**X**.0.0): redefined product scope, stack change, or breaking doc/site contract.
+2. **Update** **Last updated** to the current date (use the user’s “today” from context when provided; otherwise ISO date).
+3. **Add a row** to the **Changelog** table in `docs/PRD.md` with the new version, date, and a **concise note** of what changed in this session.
+4. In your **final message** to the user, include:
+   - A one-line **summary** of the new changelog entry.
+   - Ready-to-run **git** commands to record and publish the work (adapt branch name if needed):
+
+```bash
+git add -A
+git status
+git commit -m "chore: PRD vX.Y.Z — <short summary of this update>"
+git push
+```
+
+Use a clear `commit` subject; if only docs changed, `docs(prd):` is appropriate. Remind the user to run these commands in their repo root if they want the changes committed.
+
+**Skip** version bumps for purely conversational replies with **no file edits**.

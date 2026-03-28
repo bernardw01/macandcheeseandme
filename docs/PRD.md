@@ -1,5 +1,14 @@
 # Product Requirements Document: Mac and Cheese
 
+**Version:** 1.1.0 · **Last updated:** 2026-03-28
+
+## Changelog
+
+| Version | Date | Notes |
+|---------|------|-------|
+| 1.1.0 | 2026-03-28 | Added PRD versioning, changelog section, and agent rule: after updates bump version, record changes, suggest git commit/push. |
+| 1.0.0 | 2026-03-28 | Initial PRD: static site, `dist/` deploy to tiiny.host, Tailwind CSS, vanilla JS, docs layout. |
+
 ## Product summary
 
 A single-page static website that tells the story of **Mac and Cheese**, a rescue dog. The site is a warm, modern editorial experience hosted on **tiiny.host**, built with **HTML**, **Tailwind CSS** for styling, and **vanilla JavaScript** for light interactivity—no application server or CMS required.
