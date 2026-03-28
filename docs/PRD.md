@@ -1,11 +1,12 @@
 # Product Requirements Document: Mac and Cheese
 
-**Version:** 1.2.1 · **Last updated:** 2026-03-28
+**Version:** 1.2.2 · **Last updated:** 2026-03-28
 
 ## Changelog
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.2.2 | 2026-03-28 | Favicon: `assets/img/favicon.png` linked as `rel=icon` and `apple-touch-icon`. |
 | 1.2.1 | 2026-03-28 | Gallery: added MP4 video slide (`PXL_20260122_051244919.NS-02.MAIN.mp4`) with controls, poster, and fallback link. |
 | 1.2.0 | 2026-03-28 | Gallery: [Splide](https://splidejs.com/) 4 carousel via jsDelivr CDN (arrows, dots, swipe/drag, keyboard); no npm. |
 | 1.1.1 | 2026-03-28 | Hero image: `object-position: center top` so cover crop keeps the dog’s head in frame. |
