@@ -10,6 +10,6 @@ alwaysApply: false
 - **Progressive enhancement:** core content must work with JS disabled; use `defer` on scripts.
 - Prefer small IIFEs or plain functions; avoid polluting `window` unless necessary.
 - Honor **`prefers-reduced-motion`** for scroll behavior and animations.
-- Do not load remote scripts for tracking or fonts without explicit product approval in the PRD.
+- Do not load remote scripts for tracking without explicit product approval in the PRD. **Splide** (gallery carousel) from the pinned jsDelivr URL in `dist/index.html` is allowed per `docs/PRD.md`.
 
 If adding modules (`type="module"`), keep entry points under `dist/js/` and document any new files in publishing checks.

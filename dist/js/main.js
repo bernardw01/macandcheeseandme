@@ -3,6 +3,26 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  var galleryEl = document.getElementById("gallery-splide");
+  if (galleryEl && typeof Splide !== "undefined") {
+    var splide = new Splide(galleryEl, {
+      type: reduceMotion ? "slide" : "loop",
+      perPage: 1,
+      gap: "1rem",
+      padding: { left: "0.75rem", right: "0.75rem" },
+      breakpoints: {
+        600: { perPage: 2, padding: { left: "1rem", right: "1rem" } },
+        900: { perPage: 3, padding: { left: "1rem", right: "1rem" } },
+      },
+      pagination: true,
+      arrows: true,
+      keyboard: "global",
+      speed: reduceMotion ? 0 : 450,
+      drag: true,
+    });
+    splide.mount();
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
       var id = anchor.getAttribute("href");

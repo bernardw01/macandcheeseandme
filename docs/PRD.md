@@ -1,11 +1,13 @@
 # Product Requirements Document: Mac and Cheese
 
-**Version:** 1.1.0 · **Last updated:** 2026-03-28
+**Version:** 1.2.0 · **Last updated:** 2026-03-28
 
 ## Changelog
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.2.0 | 2026-03-28 | Gallery: [Splide](https://splidejs.com/) 4 carousel via jsDelivr CDN (arrows, dots, swipe/drag, keyboard); no npm. |
+| 1.1.1 | 2026-03-28 | Hero image: `object-position: center top` so cover crop keeps the dog’s head in frame. |
 | 1.1.0 | 2026-03-28 | Added PRD versioning, changelog section, and agent rule: after updates bump version, record changes, suggest git commit/push. |
 | 1.0.0 | 2026-03-28 | Initial PRD: static site, `dist/` deploy to tiiny.host, Tailwind CSS, vanilla JS, docs layout. |
 
@@ -66,7 +68,7 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 | Meet Mac | `meet-mac` | Yes | Short bio: basics and where he came from |
 | The rescue story | `rescue-story` | Yes | Narrative or timeline: before → turning point → home |
 | Life now | `life-now` | Yes | Day-to-day, favorites, thriving |
-| Gallery | `gallery` | Yes | Image grid; lazy load, alt per image |
+| Gallery | `gallery` | Yes | Splide carousel (scroll/slide); lazy load, alt per image |
 | Closing / CTA | `closing` | Optional copy | Thanks, adopt/donate/spread-the-word |
 | Footer | (footer landmark) | Yes | Credits, copyright, last updated |
 
@@ -79,7 +81,7 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 | Meet Mac | 1–2 short paragraphs |
 | Rescue story | 2–4 paragraphs or 3 timeline items |
 | Life now | Bullet or short paragraphs; optional “days in forever home” style stat |
-| Gallery | 4–8 images with captions optional |
+| Gallery | 4–8 images in carousel with captions optional |
 | Closing | 1 paragraph + optional external links |
 | Footer | Photo credits, “Last updated: YYYY-MM-DD” |
 
@@ -90,6 +92,7 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 - **Build:** A **build step is required** to compile Tailwind into the deployable CSS (Node.js + npm; exact `package.json` scripts and source vs output paths live in the repo and should be kept in sync with this document when they change). The artifact tiiny.host serves remains **static files only** (HTML, compiled CSS, JS, images).
 - **Hosting:** tiiny.host — deploy by zipping the **contents** of `dist/` so `index.html` is at the zip root (after running the Tailwind build so `dist/` contains the compiled stylesheet).
 - **Repo layout:** Deployable built assets live under `dist/`; this PRD and other internal docs live in `docs/` and are **not** uploaded. Source files used only at build time (e.g. Tailwind input CSS, config) may live at repo root or under `src/` per project convention—document the chosen layout in [`PUBLISH.md`](PUBLISH.md) when finalized.
+- **Third-party (gallery):** [Splide](https://splidejs.com/) **v4** is loaded from the jsDelivr CDN (CSS + JS) for the photo carousel only—no `npm install`; pin major version in URLs when upgrading. Honor `prefers-reduced-motion` (no looping animation; instant slide when reduced).
 
 ## Accessibility and performance
 
