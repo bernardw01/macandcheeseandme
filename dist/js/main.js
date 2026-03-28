@@ -21,6 +21,11 @@
       drag: true,
     });
     splide.mount();
+    splide.on("move", function () {
+      galleryEl.querySelectorAll("video").forEach(function (v) {
+        v.pause();
+      });
+    });
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

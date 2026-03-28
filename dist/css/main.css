@@ -562,6 +562,14 @@ a:hover {
   object-fit: cover;
 }
 
+.gallery-item--video video {
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  object-fit: cover;
+  background: #1a1816;
+}
+
 .gallery-item figcaption {
   margin-top: auto;
   padding: 0.55rem 0.35rem 0.15rem;
