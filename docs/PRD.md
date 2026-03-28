@@ -1,11 +1,12 @@
 # Product Requirements Document: Mac and Cheese
 
-**Version:** 1.2.3 · **Last updated:** 2026-03-28
+**Version:** 1.2.4 · **Last updated:** 2026-03-28
 
 ## Changelog
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.2.4 | 2026-03-28 | Social share: Open Graph + Twitter Card meta; `og:image` / `twitter:image` use hero JPG (replace `YOURSITE` with tiiny subdomain before production). |
 | 1.2.3 | 2026-03-28 | Closing CTA: favicon beside “Thanks for being here” (grid layout; scales to text block height on wide viewports). |
 | 1.2.2 | 2026-03-28 | Favicon: `assets/img/favicon.png` linked as `rel=icon` and `apple-touch-icon`. |
 | 1.2.1 | 2026-03-28 | Gallery: added MP4 video slide (`PXL_20260122_051244919.NS-02.MAIN.mp4`) with controls, poster, and fallback link. |

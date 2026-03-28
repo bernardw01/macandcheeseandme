@@ -19,6 +19,14 @@ set -a && [ -f .env ] && . ./.env && set +a
 
 Then `$TIINYHOST_API_KEY` is available for that terminal. Never commit `.env` (it is listed in [`.gitignore`](../.gitignore)).
 
+### Social sharing (Open Graph / Twitter)
+
+[`dist/index.html`](../dist/index.html) includes `og:image` and related tags so link previews use **`assets/img/PXL_20260328_151614044_exported_416_1774711929282.jpg`**. Facebook and other platforms require **absolute** image URLs.
+
+Before you rely on previews in production, **replace every `YOURSITE`** in the `<head>` with your real tiiny **subdomain** (the part before `.tiiny.site`). Example: if the live URL is `https://macandcheese.tiiny.site/`, replace `YOURSITE` with `macandcheese`.
+
+After deploy, validate with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (or your platform’s link preview tool) and use “Scrape Again” if the image was cached.
+
 ## Checklist (after each update)
 
 ### 1. Verify locally
