@@ -5,10 +5,10 @@ alwaysApply: true
 
 # Project layout
 
-- **Deployable site:** All files served on tiiny.host live under `site/`. The document root is `site/index.html`.
+- **Deployable site:** All files served on tiiny.host live under `dist/`. The document root is `dist/index.html`. Styling uses **Tailwind CSS** per `docs/PRD.md`—run the project’s CSS **build** before zipping or publishing so `dist/` includes compiled CSS.
 - **Documentation:** PRD, publishing notes, and internal docs live under `docs/`. Do **not** copy `docs/` into deploy zips.
-- **Secrets:** Never commit API keys, passwords, or private tokens into `site/` or the repo. Tiiny Host API keys belong in a root `.env` file (gitignored) as `TIINYHOST_API_KEY`, not in `site/`.
+- **Secrets:** Never commit API keys, passwords, or private tokens into `dist/` or the repo. Tiiny Host API keys belong in a root `.env` file (gitignored) as `TIINYHOST_API_KEY`, not in `dist/`.
 
-When adding assets (images, fonts), place them under `site/assets/` (or paths consistent with existing HTML) and reference them with **relative** URLs from the HTML file.
+When adding assets (images, fonts), place them under `dist/assets/` (or paths consistent with existing HTML) and reference them with **relative** URLs from the HTML file.
 
 After meaningful content or theme changes, update `docs/PRD.md` if the product story or visual direction changed.

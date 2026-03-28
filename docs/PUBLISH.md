@@ -1,11 +1,11 @@
 # Publishing to tiiny.host
 
-This project deploys **only** the contents of [`site/`](../site/). The [`docs/`](../docs/) folder is not part of the upload.
+This project deploys **only** the contents of [`dist/`](../dist/). The [`docs/`](../docs/) folder is not part of the upload.
 
 ## Prerequisites
 
 - An account on [tiiny.host](https://tiiny.host) (or your existing site/subdomain for updates).
-- A complete, locally verified build under `site/` with `index.html` at the folder root.
+- A complete, locally verified build under `dist/` with `index.html` at the folder root.
 
 ### API key (optional — for API / agent uploads)
 
@@ -23,7 +23,7 @@ Then `$TIINYHOST_API_KEY` is available for that terminal. Never commit `.env` (i
 
 ### 1. Verify locally
 
-- Open `site/index.html` in a desktop browser (double-click or “Open with”).
+- Open `dist/index.html` in a desktop browser (double-click or “Open with”).
 - If you ever switch to root-absolute paths (e.g. `/css/...`), use a local static server instead; for relative paths as in this repo, opening the file directly is fine.
 - Resize the window or use device emulation to confirm layout on narrow screens.
 - Click every in-page anchor and external link.
@@ -35,12 +35,12 @@ The zip **root** must contain `index.html` next to `css/`, `js/`, `assets/`, not
 From the repository root:
 
 ```bash
-cd site && zip -r ../mac-and-cheese-site.zip . -x "*.DS_Store"
+cd dist && zip -r ../mac-and-cheese-site.zip . -x "*.DS_Store"
 ```
 
-This creates `mac-and-cheese-site.zip` **one level above** `site/`, with `index.html` at the top level of the archive.
+This creates `mac-and-cheese-site.zip` **one level above** `dist/`, with `index.html` at the top level of the archive.
 
-**Common mistake:** Zipping the `site` folder itself so the archive opens to `site/index.html`. tiiny.host expects `index.html` at the **top** of the zip. The command above zips the *contents* of `site/`, which is correct.
+**Common mistake:** Zipping the `dist` folder itself so the archive opens to `dist/index.html`. tiiny.host expects `index.html` at the **top** of the zip. The command above zips the *contents* of `dist/`, which is correct.
 
 ### 3. Upload on tiiny.host
 
@@ -62,6 +62,6 @@ For product-specific steps, follow the current [Tiiny Host help](https://tiiny.h
 
 | Item | Location |
 |------|----------|
-| Deployable files | `site/` |
-| Zip command (from repo root) | `cd site && zip -r ../mac-and-cheese-site.zip . -x "*.DS_Store"` |
+| Deployable files | `dist/` |
+| Zip command (from repo root) | `cd dist && zip -r ../mac-and-cheese-site.zip . -x "*.DS_Store"` |
 | Output zip (default name) | `mac-and-cheese-site.zip` at repo root |

@@ -2,14 +2,14 @@
 
 ## Product summary
 
-A single-page static website that tells the story of **Mac and Cheese**, a rescue dog. The site is a warm, modern editorial experience hosted on **tiiny.host**, built with HTML, CSS, and vanilla JavaScript—no application server or CMS required.
+A single-page static website that tells the story of **Mac and Cheese**, a rescue dog. The site is a warm, modern editorial experience hosted on **tiiny.host**, built with **HTML**, **Tailwind CSS** for styling, and **vanilla JavaScript** for light interactivity—no application server or CMS required.
 
 ## Goals and audience
 
 | Goal | Description |
 |------|-------------|
 | Tell the story | Share Mac’s rescue arc and life in a respectful, celebratory way. |
-| Connect | Give friends, family, and supporters a single place to learn about him. |
+| Connect | Give friends, family, and supporters a single place to learn about her. |
 | Inspire | Optionally nudge visitors toward adoption awareness or supporting rescue work (links TBD). |
 
 **Primary audience:** People who know Mac’s humans, local rescue community, and casual visitors from shared links.  
@@ -33,7 +33,7 @@ Modern editorial landing page: generous whitespace, soft surfaces (rounded cards
 - **Text:** Deep charcoal for body (`#2c2c2c`), not pure black.
 - **Accent:** Single warm accent (terracotta or golden amber) for links, buttons, and key highlights—evokes warmth without feeling childish.
 
-Implement via CSS custom properties in `site/css/` so the palette stays consistent.
+Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radii in `tailwind.config` or the Tailwind v4 `@theme` layer) so the palette stays consistent. Avoid one-off arbitrary hex values outside the theme unless documenting an exception.
 
 ### Typography
 
@@ -76,15 +76,16 @@ Implement via CSS custom properties in `site/css/` so the palette stays consiste
 
 ## Technical constraints
 
-- **Stack:** Static HTML, CSS, and vanilla JavaScript only unless the PRD is revised.
-- **Hosting:** tiiny.host — deploy by zipping the **contents** of `site/` so `index.html` is at the zip root.
-- **Repo layout:** Source of truth for deployable files is `site/`; this PRD and other internal docs live in `docs/` and are **not** uploaded.
-- **Build:** No mandatory build step for v1; optional future bundler must be documented here if introduced.
+- **Stack:** Static HTML, **Tailwind CSS** for all layout and styling, and **vanilla JavaScript** only (no React, Vue, or Svelte unless this PRD is revised).
+- **CSS framework:** **Tailwind CSS** — utility-first styling; component-like structure is expressed via HTML class lists and, where helpful, small reusable patterns documented in the repo (e.g. `@layer components`). Prefer Tailwind utilities and theme extensions over large custom CSS files, except for rare global rules (e.g. base typography) in the Tailwind entry CSS file.
+- **Build:** A **build step is required** to compile Tailwind into the deployable CSS (Node.js + npm; exact `package.json` scripts and source vs output paths live in the repo and should be kept in sync with this document when they change). The artifact tiiny.host serves remains **static files only** (HTML, compiled CSS, JS, images).
+- **Hosting:** tiiny.host — deploy by zipping the **contents** of `dist/` so `index.html` is at the zip root (after running the Tailwind build so `dist/` contains the compiled stylesheet).
+- **Repo layout:** Deployable built assets live under `dist/`; this PRD and other internal docs live in `docs/` and are **not** uploaded. Source files used only at build time (e.g. Tailwind input CSS, config) may live at repo root or under `src/` per project convention—document the chosen layout in [`PUBLISH.md`](PUBLISH.md) when finalized.
 
 ## Accessibility and performance
 
 - Semantic landmarks: `header`, `main`, `footer`; one `h1`; logical heading order per section.
-- Visible focus styles for keyboard users; sufficient color contrast for text and links.
+- Visible focus styles for keyboard users (use Tailwind `focus-visible` / `ring` patterns where appropriate); sufficient color contrast for text and links.
 - All images have meaningful `alt` text; decorative images use empty `alt` where appropriate.
 - Images sized appropriately; gallery uses `loading="lazy"` where supported.
 

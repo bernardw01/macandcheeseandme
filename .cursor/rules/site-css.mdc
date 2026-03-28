@@ -1,15 +1,15 @@
 ---
-description: CSS conventions for the Mac and Cheese static site
-globs: site/**/*.css
+description: Tailwind CSS conventions for the Mac and Cheese static site
+globs: "**/tailwind.config.*,**/postcss.config.*,dist/**/*.css,src/**/*.css"
 alwaysApply: false
 ---
 
-# CSS
+# Tailwind CSS
 
-- Define **design tokens** on `:root` (colors, spacing, radii, fonts) and reuse them; align changes with `docs/PRD.md` look and feel.
-- **Mobile-first:** base styles for small screens, then `@media (min-width: …)` for larger breakpoints.
-- Prefer **class-based** styling; keep specificity low. No `!important` unless overriding a third-party constraint (rare here).
-- Respect **`prefers-reduced-motion`**: disable or simplify animations/transitions when it matches.
-- Avoid inline styles in HTML; keep presentation in CSS files under `site/css/`.
+- Follow **`docs/PRD.md`** for look and feel. Extend the **Tailwind theme** (colors, fonts, spacing, radii) instead of scattering arbitrary values; use `theme()` / design tokens for the warm palette and accent.
+- **Mobile-first:** default utilities for small screens, then `sm:`, `md:`, `lg:` (or project breakpoints) for larger viewports.
+- Prefer **utilities** and **`@layer components`** for repeated patterns; keep custom CSS in the Tailwind **input** file small (base styles, `@tailwind` directives).
+- Respect **`prefers-reduced-motion`** via `motion-reduce:` variants where motion is added.
+- **Build:** CSS served from `dist/` must be **built output** from Tailwind (`npm run build` or project script) before deploy—do not hand-edit the compiled bundle.
 
-When adding new sections, extend existing patterns (`.section`, `.section--soft`, typography scale) before inventing new systems.
+When the site is mid-migration from legacy `main.css`, prefer completing Tailwind patterns over growing parallel bespoke CSS.

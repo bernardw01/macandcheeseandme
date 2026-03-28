@@ -1,6 +1,6 @@
 ---
 description: HTML conventions for the Mac and Cheese static site
-globs: site/**/*.html
+globs: dist/**/*.html
 alwaysApply: false
 ---
 
@@ -11,10 +11,10 @@ alwaysApply: false
 - One `<h1>` per page. Use `<header>`, `<main>`, `<footer>`, and `<section>` with stable `id` attributes for in-page anchors (`#meet-mac`, `#gallery`, etc.).
 - Link CSS with `<link rel="stylesheet" href="css/...">` and JS with `<script src="js/..." defer></script>` relative to the HTML file.
 - Provide a **skip link** to `#main` for keyboard users. All non-decorative images need meaningful `alt`; decorative images use `alt=""`.
-- Avoid inline `style` except rare one-off cases; prefer `site/css/main.css` and variables.
+- Avoid inline `style` except rare one-off cases; prefer **compiled Tailwind output** under `dist/css/` (filename per project, e.g. `styles.css`) and theme tokens—not ad hoc hex in attributes.
 
 ```html
-<!-- Good: relative assets from site/index.html -->
+<!-- Good: relative assets from dist/index.html (CSS = Tailwind build output) -->
 <link rel="stylesheet" href="css/main.css" />
 <script src="js/main.js" defer></script>
 ```
