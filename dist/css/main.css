@@ -387,6 +387,74 @@ a:hover {
   text-align: center;
 }
 
+.section--cta .closing-layout {
+  text-align: left;
+}
+
+.section__inner--closing {
+  max-width: min(40rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.closing-layout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: stretch;
+}
+
+.closing-layout__brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 0;
+}
+
+.closing-layout__favicon {
+  height: 100%;
+  width: auto;
+  max-width: min(10rem, 32vw);
+  object-fit: contain;
+  object-position: center left;
+}
+
+.closing-layout__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.closing-layout__text h2 {
+  margin-top: 0;
+}
+
+.closing-layout__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .closing-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .section--cta .closing-layout {
+    text-align: center;
+  }
+
+  .closing-layout__brand {
+    justify-content: center;
+  }
+
+  .closing-layout__favicon {
+    max-height: 5rem;
+    max-width: 5rem;
+    object-position: center;
+  }
+}
+
 .section__inner {
   max-width: 720px;
   margin: 0 auto;
