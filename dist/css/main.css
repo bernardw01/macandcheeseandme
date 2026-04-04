@@ -519,6 +519,30 @@ a:hover {
   margin-bottom: 0.55rem;
 }
 
+.life-subheading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 1.75rem 0 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.life-subheading:first-of-type {
+  margin-top: 0.25rem;
+}
+
+.venue-list {
+  margin: 0 0 0.5rem;
+  padding-left: 1.35rem;
+  max-width: var(--content-max);
+  color: var(--color-text);
+}
+
+.venue-list li {
+  margin-bottom: 0.35rem;
+}
+
 .stat {
   margin-top: 2rem;
   padding: 1.25rem 1.5rem;

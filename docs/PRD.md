@@ -1,11 +1,12 @@
 # Product Requirements Document: Mac and Cheese
 
-**Version:** 1.2.4 · **Last updated:** 2026-03-28
+**Version:** 1.3.0 · **Last updated:** 2026-03-28
 
 ## Changelog
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.3.0 | 2026-03-28 | Real story copy: Meet Mac, rescue timeline, life now (Sanford venues, music, travel, water, cousins); meta descriptions updated; venue list + `.life-subheading` styles. |
 | 1.2.4 | 2026-03-28 | Social share: Open Graph + Twitter Card meta; `og:image` / `twitter:image` use hero JPG (replace `YOURSITE` with tiiny subdomain before production). |
 | 1.2.3 | 2026-03-28 | Closing CTA: favicon beside “Thanks for being here” (grid layout; scales to text block height on wide viewports). |
 | 1.2.2 | 2026-03-28 | Favicon: `assets/img/favicon.png` linked as `rel=icon` and `apple-touch-icon`. |
@@ -28,13 +29,13 @@ A single-page static website that tells the story of **Mac and Cheese**, a rescu
 | Inspire | Optionally nudge visitors toward adoption awareness or supporting rescue work (links TBD). |
 
 **Primary audience:** People who know Mac’s humans, local rescue community, and casual visitors from shared links.  
-**Success:** Visitors finish with a clear sense of who Mac is, why his story matters, and (if included) where to learn more.
+**Success:** Visitors finish with a clear sense of who Mac is, why her story matters, and (if included) where to learn more.
 
 ## Brand and tone
 
 - **Warm, hopeful, authentic** — Lead with love and the present day, not shock value.
 - **Respectful** — Do not sensationalize hardship; the rescue story should feel honest, not gratuitous.
-- **Celebratory** — Mac is the hero; the page celebrates his personality and his people.
+- **Celebratory** — Mac is the hero; the page celebrates her personality and her people.
 
 ## Look and feel
 
