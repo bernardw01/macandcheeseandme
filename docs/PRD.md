@@ -1,11 +1,12 @@
 # Product Requirements Document: Mac and Cheese
 
-**Version:** 1.3.0 · **Last updated:** 2026-03-28
+**Version:** 1.3.1 · **Last updated:** 2026-03-28
 
 ## Changelog
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.3.1 | 2026-03-28 | Footer shows **PRD version** (must match the `Version` line above); documented in page structure + technical constraints. |
 | 1.3.0 | 2026-03-28 | Real story copy: Meet Mac, rescue timeline, life now (Sanford venues, music, travel, water, cousins); meta descriptions updated; venue list + `.life-subheading` styles. |
 | 1.2.4 | 2026-03-28 | Social share: Open Graph + Twitter Card meta; `og:image` / `twitter:image` use hero JPG (replace `YOURSITE` with tiiny subdomain before production). |
 | 1.2.3 | 2026-03-28 | Closing CTA: favicon beside “Thanks for being here” (grid layout; scales to text block height on wide viewports). |
@@ -70,12 +71,12 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 | Section | ID (anchor) | Required | Purpose |
 |---------|-------------|----------|---------|
 | Hero | `hero` | Yes | Name, hook, hero visual, CTA to story/photos |
-| Meet Mac | `meet-mac` | Yes | Short bio: basics and where he came from |
+| Meet Mac | `meet-mac` | Yes | Short bio: basics and where she came from |
 | The rescue story | `rescue-story` | Yes | Narrative or timeline: before → turning point → home |
 | Life now | `life-now` | Yes | Day-to-day, favorites, thriving |
 | Gallery | `gallery` | Yes | Splide carousel (scroll/slide); lazy load, alt per image |
 | Closing / CTA | `closing` | Optional copy | Thanks, adopt/donate/spread-the-word |
-| Footer | (footer landmark) | Yes | Credits, copyright, last updated |
+| Footer | (footer landmark) | Yes | Credits, photo credits, last updated, **PRD version** (e.g. `PRD v1.3.1`) matching [`docs/PRD.md`](PRD.md) |
 
 ## Content inventory (placeholders)
 
@@ -88,7 +89,7 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 | Life now | Bullet or short paragraphs; optional “days in forever home” style stat |
 | Gallery | 4–8 images in carousel with captions optional |
 | Closing | 1 paragraph + optional external links |
-| Footer | Photo credits, “Last updated: YYYY-MM-DD” |
+| Footer | Photo credits, “Last updated: YYYY-MM-DD”, **PRD version** string in sync with this document’s **Version** |
 
 ## Technical constraints
 
@@ -98,6 +99,7 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 - **Hosting:** tiiny.host — deploy by zipping the **contents** of `dist/` so `index.html` is at the zip root (after running the Tailwind build so `dist/` contains the compiled stylesheet).
 - **Repo layout:** Deployable built assets live under `dist/`; this PRD and other internal docs live in `docs/` and are **not** uploaded. Source files used only at build time (e.g. Tailwind input CSS, config) may live at repo root or under `src/` per project convention—document the chosen layout in [`PUBLISH.md`](PUBLISH.md) when finalized.
 - **Third-party (gallery):** [Splide](https://splidejs.com/) **v4** is loaded from the jsDelivr CDN (CSS + JS) for the photo carousel only—no `npm install`; pin major version in URLs when upgrading. Honor `prefers-reduced-motion` (no looping animation; instant slide when reduced).
+- **PRD version in footer:** The live site footer (`dist/index.html`) must display the current PRD version (format: **`PRD vX.Y.Z`**, same semver as the **Version** field at the top of this file). Whenever you bump the PRD version or add a changelog row, **update the footer text** in the same change so visitors and reviewers can see which spec the deployed page reflects.
 
 ## Accessibility and performance
 
@@ -116,3 +118,5 @@ Implement via **Tailwind theme tokens** (e.g. extended colors, spacing, and radi
 ## Document ownership
 
 When the **scope, sections, or visual theme** changes in a material way, update this PRD in the same change as the site (or immediately after) so agents and humans stay aligned.
+
+When the **PRD version** changes, update the **footer** string in [`dist/index.html`](../dist/index.html) to match (see **PRD version in footer** under Technical constraints).

@@ -13,9 +13,10 @@ Whenever you complete **substantive updates** to this repo (e.g. `dist/`, `docs/
    - **Major** (**X**.0.0): redefined product scope, stack change, or breaking doc/site contract.
 2. **Update** **Last updated** to the current date (use the user’s “today” from context when provided; otherwise ISO date).
 3. **Add a row** to the **Changelog** table in `docs/PRD.md` with the new version, date, and a **concise note** of what changed in this session.
-4. In your **final message** to the user, include:
+4. **Footer sync:** If the PRD **version number** changed, update the **`PRD vX.Y.Z`** string in [`dist/index.html`](dist/index.html) footer (`site-footer__meta`) to match—required by [`docs/PRD.md`](docs/PRD.md).
+5. In your **final message** to the user, include:
    - A one-line **summary** of the new changelog entry.
-   - Ready-to-run **git** commands to record and publish the work (adapt branch name if needed):
+   - Ready-to-run **git** commands to record and publish the work (adapt branch name if needed).
 
 ```bash
 git add -A
